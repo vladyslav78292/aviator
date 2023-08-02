@@ -90,8 +90,9 @@ h1 {
   padding: 0 5px;
   text-align: center;
   color: #fff;
-  background-color: #2a2f37;
-  font-size: 30px
+  font-size: 30px;
+  position: absolute;
+  top: 10px;
 }
 
 @media (min-width: 768px) {
@@ -144,8 +145,8 @@ nav {
   justify-content: space-between;
   background:0 0;
   position: relative;
+  left: 50px;
   top: initial;
-  left: initial;
   transform: initial;
   height: initial;
   padding: 0;
@@ -269,7 +270,12 @@ nav > ul > li > a:focus,nav > ul > li > a:hover {
   transition: .15s ease-in;
   font-weight: 700;
   color: #fff;
-  line-height: 40px
+  line-height: 40px;
+  width: 180px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bl_nav__link:focus,.bl_nav__link:hover {
@@ -679,17 +685,19 @@ footer > .column > div:last-of-type {
   display: block;
   background-image: url('../images/banner.jpg');
   max-width: 90vw;
-  height: 250px;
-  width: 350px;
+  height: 400px;
+  width: 550px;
   -o-object-fit: contain;
   object-fit: contain;
+  background-size: cover;
   z-index: 1
 }
 
 .content {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  gap: 120px;
   padding: 20px 0;
 }
 
@@ -930,6 +938,17 @@ div > .dropdown__list > li::before {
   width: 70%;
 }
 
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  h1 {
+    position: static;
+  }
+}
+
 @media (max-width: 720px) {
   .header_logo > img {
     width: 150px;
@@ -944,8 +963,17 @@ div > .dropdown__list > li::before {
     width: 100%;
   }
 
-  .content {
-    flex-direction: column;
-    gap: 50px;
+  .homeImage_pic {
+    width: 280px;
+    height: 210px;
+  }
+
+  nav {
+    left: 20px;
+  }
+
+  .bl_nav__link {
+    width: 130px;
+    height: 30px;
   }
 }
